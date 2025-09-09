@@ -593,8 +593,8 @@ void GuiToolsWidget::on_pushButtonSurfaceHide_clicked() {
 //////////////////////////////////////////////////////////////////////
 void GuiToolsWidget::mousePressEvent(QMouseEvent * event) {
 
-  int x = event->position().x();
-  int y = event->position().y();
+  int x = event->pos().x();
+  int y = event->pos().y();
 
   if(label3DCanvasSize->geometry().contains(x,y,true)) {
     panel3DCanvasSize->setVisible(panel3DCanvasSize->isHidden());

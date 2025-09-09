@@ -29,7 +29,7 @@ ASSETSDIR = $$BASEDIR/assets
 CONFIG += qt
 QT += core
 QT += widgets
-QT += openglwidgets
+QT += opengl
 
 DEFINES += HAVE_IMG
 DEFINES += HAVE_HOMEWORK
@@ -43,7 +43,7 @@ win32 {
 }
 
 unix:!macx {
-    QMAKE_LFLAGS += -Wl
+    QMAKE_LFLAGS += -W
     #QMAKE_CXXFLAGS += -g
 }
 

@@ -548,7 +548,7 @@ void GuiGLWidget::setMaterialColor(const QColor& materialColor) {
 }
 
 //////////////////////////////////////////////////////////////////////
-void GuiGLWidget::enterEvent(QEnterEvent* /*event*/) {
+void GuiGLWidget::enterEvent(QEvent* /*event*/) {
   _mouseInside = true;
 }
 
@@ -564,8 +564,8 @@ void GuiGLWidget::mousePressEvent(QMouseEvent * event) {
   _mousePressed = true;
   _mainWindow->timerStop();
   _buttons = event->buttons();
-  int x       = event->position().x(); _prevMouseX = x;
-  int y       = event->position().y(); _prevMouseY = y;
+  int x       = event->pos().x(); _prevMouseX = x;
+  int y       = event->pos().y(); _prevMouseY = y;
   int codeX   = (x<_borderLeft)?0:(x>=width() -_borderRight)?2:1;
   int codeY   = (y<_borderUp  )?0:(y>=height()-_borderDown )?2:1;
   _mouseZone = codeX+3*codeY;
@@ -647,9 +647,8 @@ void GuiGLWidget::mouseReleaseEvent(QMouseEvent* /*event*/) {
 void GuiGLWidget::mouseMoveEvent(QMouseEvent * event) {
 
   if(_mouseInside==false) return;
-
-  int x      = event->position().x();
-  int y      = event->position().y();
+  int x      = event->pos().x();
+  int y      = event->pos().y();
   int codeX  = (x<_borderLeft)?0:(x>=width() -_borderRight)?2:1;
   int codeY  = (y<_borderUp  )?0:(y>=height()-_borderDown )?2:1;
   _mouseZone = codeX+3*codeY;
@@ -658,7 +657,6 @@ void GuiGLWidget::mouseMoveEvent(QMouseEvent * event) {
 
     int   dx     = (x-_prevMouseX); _prevMouseX = x;
     int   dy     = (_prevMouseY-y); _prevMouseY = y;
-
     float fdx    = ((float)dx/(float)width() );
     float thetaY =  180.0f*fdx;
     float fdy    = ((float)dy/(float)height());

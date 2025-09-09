@@ -36,12 +36,12 @@
 
 #include "SaverStl.hpp"
 
-#include "wrl/Shape.hpp"
-#include "wrl/Appearance.hpp"
-#include "wrl/Material.hpp"
-#include "wrl/IndexedFaceSet.hpp"
+#include "../wrl/Shape.hpp"
+#include "../wrl/Appearance.hpp"
+#include "../wrl/Material.hpp"
+#include "../wrl/IndexedFaceSet.hpp"
 
-#include "core/Faces.hpp"
+#include "../core/Faces.hpp"
 
 const char* SaverStl::_ext = "stl";
 

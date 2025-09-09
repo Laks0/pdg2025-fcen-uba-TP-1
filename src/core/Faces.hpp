@@ -89,7 +89,10 @@ public:
 
 private:
 
-  // TODO
+  int _nV;
+
+	const vector<int> * _coordIndexReference;
+	vector<int> _faceIndex;
 
 };
 
