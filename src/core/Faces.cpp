@@ -43,9 +43,10 @@ Faces::Faces(const int nV, const vector<int>& coordIndex) {
 
 	_coordIndexReference = &coordIndex;
 
+	_faceIndex.push_back(0);
 	for (int idx = 0; idx < coordIndex.size(); idx++) {
-		if (coordIndex[idx] != -1) continue;
-		_faceIndex.push_back(idx+1);
+		if (coordIndex[idx] == -1)
+			_faceIndex.push_back(idx+1);
 	}
 }
 
@@ -54,7 +55,7 @@ int Faces::getNumberOfVertices() const {
 }
 
 int Faces::getNumberOfFaces() const {
-	return _faceIndex.size();
+	return _faceIndex.size()-1;
 }
 
 int Faces::getNumberOfCorners() const {

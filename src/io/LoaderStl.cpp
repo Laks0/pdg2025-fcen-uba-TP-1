@@ -39,10 +39,10 @@
 #include "LoaderStl.hpp"
 #include "StrException.hpp"
 
-#include "wrl/Shape.hpp"
-#include "wrl/Appearance.hpp"
-#include "wrl/Material.hpp"
-#include "wrl/IndexedFaceSet.hpp"
+#include "../wrl/Shape.hpp"
+#include "../wrl/Appearance.hpp"
+#include "../wrl/Material.hpp"
+#include "../wrl/IndexedFaceSet.hpp"
 
 // reference
 // https://en.wikipedia.org/wiki/STL_(file_format)

@@ -40,7 +40,7 @@
 #include "Loader.hpp"
 #include "Tokenizer.hpp"
 
-#include "wrl/Node.hpp"
+#include "../wrl/Node.hpp"
 
 class LoaderStl : public Loader {
 
